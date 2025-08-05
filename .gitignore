@@ -1,0 +1,15 @@
+/media/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+ENV/
+.idea/
+*.iml
+*.log
+*.sqlite3
+*.pyo
+*.pyd
+Thumbs.db
+.DS_Store

@@ -1,0 +1,25 @@
+{% extends 'Books/base.html' %}
+
+
+{% block content %}
+    <div class="book-details">
+        <img src="{{book.image.url}}" alt="{{ book.title }} image">
+        <ul>
+
+            <li>{{book.title}}</li>
+            <li>{{book.author}}</li>
+            <li>{{book.description}}</li>
+            <li>{{book.price}}$</li>
+            <li>{{book.published_date}}</li>
+        </ul>
+    </div>
+
+
+    <form action="{% url 'cart_add' book_id=book.id %}" method="POST" class="form-container">
+        {{ form }}
+        {% csrf_token %}
+        <input type="submit" value="Add">
+    </form>
+
+
+{% endblock %}

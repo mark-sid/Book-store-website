@@ -1,0 +1,39 @@
+{% extends 'Books/base.html' %}
+
+
+{% block content %}
+    <form method="GET" action="{% url 'book_list' %}" class="form-container">
+        {{ form.as_p }}
+    </form>
+
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{{book.slug}}">
+                    <img src="{{ book.image.url }}" alt="{{ book.title }} image">
+                    {{ book.title }} - {{ book.author }} - {{ book.price }}$
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1&category_slug={{ request.GET.category_slug }}">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}&category_slug={{ request.GET.category_slug }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}&category_slug={{ request.GET.category_slug }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}&category_slug={{ request.GET.category_slug }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% endblock %}
