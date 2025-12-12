@@ -4,7 +4,7 @@ class CategorySelectForm(forms.Form):
     category_slug = forms.ChoiceField(
         choices=[('', 'All Categories')],
         widget=forms.Select(attrs={'onchange': 'this.form.submit()'}),
-        required=False  # Установите required в False
+        required=False
     )
 
     def __init__(self, *args, **kwargs):
