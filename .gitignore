@@ -1,3 +1,5 @@
+**/media/
+media/
 /media/
 __pycache__/
 *.py[cod]
@@ -11,5 +13,6 @@ ENV/
 *.sqlite3
 *.pyo
 *.pyd
+*.pyc
 Thumbs.db
 .DS_Store

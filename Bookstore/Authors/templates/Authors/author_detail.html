@@ -1,0 +1,19 @@
+{% extends 'Books/base.html' %}
+
+
+{% block content %}
+    <div class="book-details">
+        <img src="{{author.portrait.url}}" alt="{{ author.full_name }} image">
+        <ul>
+            <li>{{author.full_name}}</li>
+
+            <li>Lived from {{author.birth_date}} to {{author.death_date}}</li>
+        </ul>
+        {{author.bio}}
+    </div>
+
+
+
+
+
+{% endblock %}

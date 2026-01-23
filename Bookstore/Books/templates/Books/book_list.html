@@ -3,6 +3,11 @@
 
 {% block content %}
     <form method="GET" action="{% url 'book_list' %}" class="form-container">
+        <input type="text" name="search_query">
+        <button type="submit">🔍︎</button>
+    </form>
+
+    <form method="GET" action="{% url 'book_list' %}" class="form-container">
         {{ form.as_p }}
     </form>
 
@@ -11,7 +16,11 @@
             <li>
                 <a href="{{book.slug}}">
                     <img src="{{ book.image.url }}" alt="{{ book.title }} image">
-                    {{ book.title }} - {{ book.author }} - {{ book.price }}$
+                    {% if book.author.slug %}
+                        {{ book.title }} - {{ book.author }} - {{ book.price }}$
+                    {% else %}
+                        {{ book.title }} - {{ book.price }}$
+                    {% endif %}
                 </a>
             </li>
         {% endfor %}
@@ -21,8 +30,8 @@
         <div class="pagination">
             <span class="step-links">
                 {% if page_obj.has_previous %}
-                    <a href="?page=1&category_slug={{ request.GET.category_slug }}">&laquo; first</a>
-                    <a href="?page={{ page_obj.previous_page_number }}&category_slug={{ request.GET.category_slug }}">previous</a>
+                    <a href="?page=1&category_slug={{ request.GET.category_slug }}&search_query={{ request.GET.search_query }}">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}&category_slug={{ request.GET.category_slug }}&search_query={{ request.GET.search_query }}">previous</a>
                 {% endif %}
 
                 <span class="current">
@@ -30,8 +39,8 @@
                 </span>
 
                 {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}&category_slug={{ request.GET.category_slug }}">next</a>
-                    <a href="?page={{ page_obj.paginator.num_pages }}&category_slug={{ request.GET.category_slug }}">last &raquo;</a>
+                    <a href="?page={{ page_obj.next_page_number }}&category_slug={{ request.GET.category_slug }}&search_query={{ request.GET.search_query }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}&category_slug={{ request.GET.category_slug }}&search_query={{ request.GET.search_query }}">last &raquo;</a>
                 {% endif %}
             </span>
         </div>

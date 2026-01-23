@@ -1,19 +1,19 @@
 from django import forms
+from .models import Category
+
 
 class CategorySelectForm(forms.Form):
-    category_slug = forms.ChoiceField(
-        choices=[('', 'All Categories')],
+    category = forms.ModelChoiceField(
+        queryset=Category.objects.none(),
+        required=False,
+        to_field_name='slug',
+        empty_label='All Categories',
         widget=forms.Select(attrs={'onchange': 'this.form.submit()'}),
-        required=False  # Установите required в False
     )
 
     def __init__(self, *args, **kwargs):
-        categories = kwargs.pop('categories', [])
+        queryset = kwargs.pop('queryset', Category.objects.all())
         super().__init__(*args, **kwargs)
-        self.fields['category_slug'].choices += [(category.slug, category.name) for category in categories]
 
-    def clean_category_slug(self):
-        category_slug = self.cleaned_data.get('category_slug')
-        if category_slug == '':
-            return None
-        return category_slug
+        self.fields['category'].queryset = queryset
+

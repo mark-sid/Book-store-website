@@ -11,7 +11,9 @@
 </head>
 <body>
     <div class="menu">
-        <a href="/">Book store</a>
+        <a href="{% url 'book_list' %}">Book store</a>
+        <p></p>
+        <a href="{% url 'authors_list' %}">Authors</a>
     </div>
 
     <div class="cart">

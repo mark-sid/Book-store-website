@@ -1,17 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
-import os
-import uuid
-
-
-# Create your models here.
-
-
-def get_upload_path(filename):
-    unique_id = uuid.uuid4()
-    ext = filename.split('.')[-1]
-    new_filename = f"{unique_id}.{ext}"
-    return os.path.join('images/', new_filename)
+from Authors.models import Author
+from Bookstore.utils import get_upload_path
 
 
 class Category(models.Model):
@@ -21,6 +11,7 @@ class Category(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.name)
+
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -30,7 +21,7 @@ class Category(models.Model):
 class Book(models.Model):
     slug = models.SlugField(max_length=200, db_index=True, unique=True, blank=True)
     title = models.CharField(max_length=50)
-    author = models.CharField(max_length=100)
+    author= models.ForeignKey(Author, on_delete=models.SET_NULL, related_name='books', null=True)
     image = models.ImageField(upload_to=get_upload_path)
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     description = models.CharField(max_length=250)

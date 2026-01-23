@@ -5,9 +5,13 @@
     <div class="book-details">
         <img src="{{book.image.url}}" alt="{{ book.title }} image">
         <ul>
-
             <li>{{book.title}}</li>
-            <li>{{book.author}}</li>
+            {% if book.author.slug %}
+                <li><a href="{% url 'author_detail' slug=book.author.slug %}">{{book.author}}</a></li>
+            {% else %}
+                <li>No author</li>
+            {% endif %}
+            <li>{{book.category.name}}</li>
             <li>{{book.description}}</li>
             <li>{{book.price}}$</li>
             <li>{{book.published_date}}</li>

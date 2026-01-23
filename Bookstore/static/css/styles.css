@@ -222,21 +222,22 @@ ul li a span {
     font-size: 16px; /* Размер шрифта */
 }
 
-/* Стили для кнопки отправки */
-.form-container input[type="submit"] {
-    background-color: #4CAF50; /* Зеленый фон */
-    color: white; /* Белый текст */
-    padding: 10px 15px; /* Отступы внутри кнопки */
-    border: none; /* Убираем рамку */
-    border-radius: 5px; /* Закругление углов */
-    cursor: pointer; /* Указатель при наведении */
-    font-size: 16px; /* Размер шрифта */
-    transition: background-color 0.3s; /* Плавный переход цвета */
+
+input {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
-/* Эффект при наведении на кнопку */
+
+
 .form-container input[type="submit"]:hover {
-    background-color: #45a049; /* Темнее при наведении */
+    background-color: #45a049;
 }
 
 
