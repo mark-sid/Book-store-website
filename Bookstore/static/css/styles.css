@@ -10,9 +10,8 @@ body {
     color: #333;
 }
 
-/* Menu styles */
 .menu {
-    background-color: #4CAF50; /* Green background */
+    background-color: #4CAF50;
     padding: 15px;
     text-align: center;
 }
@@ -23,7 +22,6 @@ body {
     font-size: 24px;
 }
 
-/* Cart styles */
 .cart {
     background-color: #fff;
     padding: 15px;
@@ -32,23 +30,16 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
 }
-
-
-
-/* Content styles */
+ 
 .content {
     padding: 20px;
 }
 
-/* Убираем подчеркивание и синий цвет для всех ссылок */
 a {
-    text-decoration: none; /* Убираем подчеркивание */
-    color: inherit; /* Устанавливаем цвет текста, унаследованный от родительского элемента */
+    text-decoration: none;
+    color: inherit;
 }
 
-
-
-/* Book list styles */
 ul {
     list-style-type: none;
 }
@@ -61,12 +52,10 @@ ul li {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Form styles */
 form {
     margin: 20px 0;
 }
 
-/* Table styles for cart */
 .cart table {
     width: 100%;
     border-collapse: collapse;
@@ -79,13 +68,12 @@ form {
 }
 
 .cart th {
-    background-color: #4CAF50; /* Green header */
+    background-color: #4CAF50; 
     color: white;
 }
 
-/* Button styles */
 .button {
-    background-color: #4CAF50; /* Green button */
+    background-color: #4CAF50; 
     color: white;
     padding: 10px 15px;
     text-decoration: none;
@@ -93,7 +81,6 @@ form {
     display: inline-block;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .menu {
         font-size: 20px;
@@ -125,105 +112,101 @@ form {
 
 
 ul {
-    display: flex; /* Используем flexbox для выравнивания */
-    flex-wrap: wrap; /* Позволяет элементам переноситься на новую строку */
-    justify-content: center; /* Центрирование элементов */
-    list-style-type: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем отступы */
+    display: flex;  
+    flex-wrap: wrap;  
+    justify-content: center; 
+    list-style-type: none; 
+    padding: 0;
 }
 
 ul li {
-    text-align: center; /* Центрирование текста */
-    margin: 10px; /* Отступы между элементами списка */
+    text-align: center; 
+    margin: 10px; 
 }
 
 ul li a {
-    display: flex; /* Используем flexbox для выравнивания */
-    flex-direction: column; /* Устанавливаем направление колонкой */
-    align-items: center; /* Центрируем элементы по горизонтали */
-    text-decoration: none; /* Убираем подчеркивание */
-    color: inherit; /* Устанавливаем цвет текста, унаследованный от родительского элемента */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
 }
 
 ul li img {
-    width: 100%; /* Ширина изображения адаптивная */
-    height: auto; /* Высота автоматически подстраивается */
-    max-width: 300px; /* Максимальная ширина изображения */
-    max-height: 500px; /* Максимальная высота изображения */
-    object-fit: cover; /* Сохранение пропорций и обрезка */
-    border-radius: 5px; /* Закругление углов (по желанию) */
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 ul li a span {
-    margin-top: 10px; /* Отступ сверху для текста */
-    font-weight: bold; /* Жирный шрифт для выделения текста */
+    margin-top: 10px;
+    font-weight: bold;
 }
 
-/* Стили для контейнера с деталями книги */
 .book-details {
-    text-align: center; /* Центрируем содержимое */
-    margin: 20px; /* Отступы вокруг блока */
-    padding: 20px; /* Отступы внутри блока */
-    background-color: #fff; /* Белый фон для блока */
-    border-radius: 5px; /* Закругление углов */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для блока */
-    max-width: 1000px; /* Максимальная ширина контейнера */
-    margin-left: auto; /* Центрируем контейнер по горизонтали */
-    margin-right: auto; /* Центрируем контейнер по горизонтали */
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Стили для списка с деталями книги */
 .book-details ul {
-    list-style-type: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем отступы */
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Стили для изображения */
 .book-details img {
-    width: 100%; /* Адаптивная ширина изображения */
-    height: auto; /* Автоматическая высота */
-    max-width: 500px; /* Максимальная ширина изображения */
-    border-radius: 5px; /* Закругление углов изображения */
-    display: block; /* Делаем изображение блочным элементом */
-    margin: 0 auto; /* Центрируем изображение */
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
 }
 
-/* Стили для элементов списка */
 .book-details li {
-    margin-top: 10px; /* Отступ сверху для элементов списка */
+    margin-top: 10px;
 }
 
-
-/* Стили для формы */
 .form-container {
-    background-color: #f9f9f9; /* Светлый фон для формы */
-    border: 1px solid #ddd; /* Светлая рамка */
-    border-radius: 5px; /* Закругление углов */
-    padding: 20px; /* Отступы внутри формы */
-    margin: 20px auto; /* Центрирование формы */
-    max-width: 400px; /* Максимальная ширина формы */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Тень для формы */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 400px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Стили для меток */
 .form-container label {
-    display: block; /* Метки на новой строке */
-    margin-bottom: 10px; /* Отступ снизу */
-    font-weight: bold; /* Жирный шрифт для меток */
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
-/* Стили для выпадающего списка */
 .form-container select {
-    width: 100%; /* Ширина 100% */
-    padding: 10px; /* Отступы внутри */
-    border: 1px solid #ccc; /* Светлая рамка */
-    border-radius: 5px; /* Закругление углов */
-    margin-bottom: 20px; /* Отступ снизу */
-    font-size: 16px; /* Размер шрифта */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 16px;
 }
 
+<<<<<<< HEAD
 
 input {
+=======
+.form-container input[type="submit"] {
+>>>>>>> 54c77019738af15dfe5148add3b6254c0c648837
     background-color: #4CAF50;
     color: white;
     padding: 10px 15px;
@@ -234,10 +217,14 @@ input {
     transition: background-color 0.3s;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 54c77019738af15dfe5148add3b6254c0c648837
 .form-container input[type="submit"]:hover {
     background-color: #45a049;
 }
+
 
 
