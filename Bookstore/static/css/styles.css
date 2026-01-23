@@ -201,12 +201,9 @@ ul li a span {
     font-size: 16px;
 }
 
-<<<<<<< HEAD
 
-input {
-=======
 .form-container input[type="submit"] {
->>>>>>> 54c77019738af15dfe5148add3b6254c0c648837
+
     background-color: #4CAF50;
     color: white;
     padding: 10px 15px;
@@ -217,11 +214,6 @@ input {
     transition: background-color 0.3s;
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 54c77019738af15dfe5148add3b6254c0c648837
 .form-container input[type="submit"]:hover {
     background-color: #45a049;
 }
