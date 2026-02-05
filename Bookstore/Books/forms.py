@@ -9,7 +9,6 @@ class CategorySelectForm(forms.Form):
         to_field_name='slug',
         empty_label='All Categories',
         widget=forms.Select(attrs={'onchange': 'this.form.submit()'}),
-        required=False
     )
 
     def __init__(self, *args, **kwargs):
