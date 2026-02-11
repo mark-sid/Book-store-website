@@ -201,6 +201,13 @@ ul li a span {
     font-size: 16px;
 }
 
+input[type="text"] {
+  width: 100%;
+  max-width: 260px;
+  min-width: 100px;
+  box-sizing: border-box;
+}
+
 
 .form-container input[type="submit"] {
 
@@ -218,5 +225,27 @@ ul li a span {
     background-color: #45a049;
 }
 
+.order-container {
+    background-color: #f9f9f9;
+    padding:5px;
+    margin: 20px auto;
+    display: inline-block;
+}
+
+.order-container p {
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.order-container input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
 
 

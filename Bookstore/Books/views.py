@@ -1,6 +1,8 @@
 from django.db.models import Q
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from Cart.forms import CartAddBookForm
 from . forms import CategorySelectForm
 from .models import Book, Category
@@ -42,6 +44,10 @@ class BookListView(ListView):
 
         return context
 
+    @method_decorator(cache_page(60 * 15, key_prefix='book_list'))
+    def get(self, *args, **kwargs):
+        return super().get(self.request, *args, **kwargs)
+
 
 class BookDetailView(DetailView):
     template_name = 'Books/book_detail.html'
@@ -52,3 +58,7 @@ class BookDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['form'] = CartAddBookForm()
         return context
+
+    @method_decorator(cache_page(60 * 15, key_prefix='book_list'))
+    def get(self, *args, **kwargs):
+        return super().get(self.request, *args, **kwargs)
